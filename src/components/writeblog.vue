@@ -40,7 +40,7 @@
         </div>
 
         <div class="button">
-            <el-button @click="open">发布博客</el-button>
+            <el-button @click="loginValidation">发布博客</el-button>
             <el-button @click="returnHomePage">返回首页</el-button>
         </div>
     </div>
@@ -131,7 +131,7 @@
                 this.inputValue = '';
             },
             open() {
-                this.$confirm('发送文章, 是否继续?', '提示', {
+                this.$confirm('验证成功, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
@@ -148,6 +148,25 @@
                     this.$message({
                         type: 'info',
                         message: '已取消发送'
+                    });
+                });
+            },
+            loginValidation() {
+                this.$prompt('请输入密码', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    inputPattern: /495832/,
+                    inputErrorMessage: '密码不正确'
+                }).then(() => {
+                    this.$message({
+                        type: 'success',
+                        message: '验证成功'
+                    });
+                    this.open()
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '取消输入'
                     });
                 });
             }
