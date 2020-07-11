@@ -14,10 +14,6 @@
             </h2>
         </header>
         <div class="article-content" v-html="articleDetail.description"></div>
-        <!--        <VueShowdown-->
-        <!--                markdown="~~test~~"-->
-        <!--                flavor="github"-->
-        <!--                :options="{ emoji: true }"/>-->
         <div class="markdown-body" v-html="content"></div>
         <div class="dshareBox bdsharebuttonbox" data-tag="share">
             分享到
