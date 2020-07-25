@@ -2,11 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
+const Home = () => import('./pages/Home')
+const ArticleList = () => import('./pages/ArticleList')
+const ArticleDetail = () => import('./pages/ArticleDetail')
+const WriteBlog = () => import('./pages/WriteBlog')
+const AboutMe = () => import('./pages/AboutMe')
+
 export default new Router({
     mode: 'history',
     routes: [{
             path: '/',
-            component: resolve => require(['./pages/Home.vue'], resolve),
+            component: Home,
             meta: {
                 auth: true
             },
@@ -14,21 +20,21 @@ export default new Router({
         }, //首页
         {
             path: '/Home',
-            component: resolve => require(['./pages/Home.vue'], resolve),
+            component: Home,
             meta: {
                 auth: true
             },
             name: 'Home'
         }, {
             path: '/Article/:id',
-            component: resolve => require(['./pages/ArticleList.vue'], resolve),
+            component: ArticleList,
             meta: {
                 auth: true
             },
             name: 'Article'
         },{
             path: '/ArticleDetail',
-            component: resolve => require(['./pages/ArticleDetail.vue'], resolve),
+            component: ArticleDetail,
             meta:{
                 auth: true
             },
@@ -36,7 +42,7 @@ export default new Router({
         },
         {
             path: '/WriteBlog',
-            component: resolve => require(['./pages/WriteBlog.vue'], resolve),
+            component: WriteBlog,
             meta: {
                 auth: true
             },
@@ -44,7 +50,7 @@ export default new Router({
         },
         {
             path: '/Aboutme',
-            component: resolve => require(['./pages/AboutMe.vue'], resolve),
+            component: AboutMe,
             meta: {
                 auth: true
             },
