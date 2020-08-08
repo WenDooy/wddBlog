@@ -20,7 +20,7 @@
     "jquery": "^3.5.1",
     "leancloud-storage": "^4.6.1",
     "markdown-loader": "^5.1.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "sass-loader": "^8.0.2",
     "showdown": "^1.9.1",
     "vue": "^2.6.11",
